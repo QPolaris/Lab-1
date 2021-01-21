@@ -30,7 +30,7 @@ def binarySearch(A, k):
                 return bSearch(A, k, low, mid-1)
         else:
             return bSearch(A, k, mid+1, high)
-    if isinstance(A, list) = True and isinstance(k, int) = True:
+    if isinstance(A, list) == True and isinstance(k, int) == True:
         if len(A) == 0:
             return -1
         else:
@@ -53,7 +53,7 @@ def linearSearch(A, k):
     """
 
     #TODO: Implement without using python's in-built function
-    if isinstance(A, list) = True and isinstance(k, int) = True:
+    if isinstance(A, list) == True and isinstance(k, int) == True:
         if len(A) == 0:
             return -1
         else:
