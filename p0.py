@@ -18,10 +18,12 @@ def binarySearch(A, k):
     #TODO: Implement without using python's in-built functiondef binary(A, k):
     def bSearch(A, k, low, high):
         if high == low:
-            return A[low] == k
+            if A[low] == k:
+                return low
+            else:
+                return -1
         mid = (low + high)//2
         if A[mid] == k:
-            '''print('Binary key found at position ' + str(mid))'''
             return mid
         elif A[mid] > k:
             if low == mid:
@@ -30,13 +32,14 @@ def binarySearch(A, k):
                 return bSearch(A, k, low, mid-1)
         else:
             return bSearch(A, k, mid+1, high)
-    if isinstance(A, list) == True and isinstance(k, int) == True:
+    if isinstance(A, list) == False or isinstance(k, int) == False:
+        return -1
+    else:
         if len(A) == 0:
             return -1
         else:
-            return bSearch(A, k, 0, len(A)-1)
-    else:
-        return -1
+            x = bSearch(A, k, 0, len(A)-1)
+            return x
 
     
     
@@ -53,12 +56,10 @@ def linearSearch(A, k):
     """
 
     #TODO: Implement without using python's in-built function
-    if isinstance(A, list) == True and isinstance(k, int) == True:
-        if len(A) == 0:
-            return -1
-        else:
-            for i in range(len(A)):
-                if A[i] == k:
-                    return i
+    if isinstance(A, list) == False or isinstance(k, int) == False:
+        return -1
     else:
+        for i in range(len(A)):
+            if A[i] == k:
+                return i
         return -1
